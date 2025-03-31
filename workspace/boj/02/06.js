@@ -38,4 +38,10 @@ KOI 전자에서는 건강에 좋고 맛있는 훈제오리구이 요리를 간�
 예제 출력 3
 0 13
 */
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split(" ");
+//console.log(fileData);
 
+let a = parseInt(fileData[0]);
+let b = parseInt(fileData[1]);
+let c = parseInt(fileData[2]);

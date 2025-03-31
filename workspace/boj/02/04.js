@@ -45,3 +45,19 @@
 4
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split("\n");
+//console.log(fileData);
+
+const a = parseInt(fileData[0]);
+const b = parseInt(fileData[1]);
+
+if (a > 0 && b > 0) {
+  console.log(1);
+} else if (a < 0 && b > 0) {
+  console.log(2);
+} else if (a < 0 && b < 0) {
+  console.log(3);
+} else {
+  console.log(4);
+}

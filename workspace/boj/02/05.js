@@ -40,3 +40,17 @@
 22 55
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split(" ");
+//console.log(fileData);
+
+let a = parseInt(fileData[0]);
+let b = parseInt(fileData[1]);
+
+if (b >= 45) {
+  console.log(a, b - 45);
+} else {
+  a = a === 0 ? 23 : a - 1;
+  b = 60 - (45 - b);
+  console.log(a, b);
+}
