@@ -38,3 +38,13 @@
 600
 */
 
+// 입력값 예시: 
+// 4 3 5
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim().split(" ");
+// console.log(fileData);
+
+const a = parseInt(fileData[0]); // 4
+const b = parseInt(fileData[1]); // 3
+const c = parseInt(fileData[2]); // 5
+
