@@ -39,9 +39,12 @@ KOI 전자에서는 건강에 좋고 맛있는 훈제오리구이 요리를 간�
 0 13
 */
 const fs = require("fs");
-const fileData = fs.readFileSync(0).toString().trim().split(" ");
-//console.log(fileData);
+const fileData = fs.readFileSync(0).toString().trim().split("\n");
+let [a, b] = fileData[0].split(" ").map(Number);
+let c = parseInt(fileData[1]);
 
-let a = parseInt(fileData[0]);
-let b = parseInt(fileData[1]);
-let c = parseInt(fileData[2]);
+let totalminute = a * 60 + b + c;
+let hour = Math.floor(totalminute / 60) % 24;
+let minute = totalminute % 60;
+
+console.log(hour, minute);
