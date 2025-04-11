@@ -54,6 +54,12 @@ function main() {
   // n개의 바구니를 0으로 초기화한 배열 생성
   const result = new Array(n).fill(0);
 
+  // fill()을 몰랐다면...
+  // const result = [];
+  // for(let i=0; i<n; i++) {
+  //   result.push(0);
+  // }
+
   // 각 공 넣기 명령을 순회
   for(let i=1; i<data.length; i++) {
     const rowArr = data[i]; // i=1 [ 1, 2, 3 ], i=2 [ 3, 4, 4 ] ...
@@ -77,6 +83,12 @@ function main() {
   // 결과 배열을 공백으로 구분된 문자열로 변환하여 출력
   // [1, 2, 1, 1, 0] => '1 2 1 1 0'
   const strResult = result.join(' ');
+
+  // join()을 몰랐다면...
+  // const strResult = '';
+  // for(let i=0; i<result.length; i++){
+  //   strResult += result[i] + ' ';
+  // }
   console.log(strResult);
 
   // 문자열을 다시 배열로 변환 (참고용 코드)
