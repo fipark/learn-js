@@ -51,14 +51,16 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline을 사용할 �
 2000
 */
 
-const fs = require("fs");
-const fileData = fs.readFileSync(0).toString().trim().split("\n");
+const fs = require("fs"); // 파일 시스템 모듈 불러오기 (입력 받기 위함)
+const fileData = fs.readFileSync(0).toString().trim().split("\n"); // 입력 전체를 읽고 줄 단위로 나눔
 
-let T = parseInt(fileData[0]); // 라인개수
+const T = parseInt(fileData[0]); // 첫 줄에서 테스트 케이스 개수를 정수로 파싱
 
+let sumData = ""; // 결과를 저장할 문자열 초기화
 for (let i = 1; i <= T; i++) {
-  const data = fileData[i].split(" "); // i번째 줄에서 스페이스로 나누고
-  const A = parseInt(data[0]); // i줄에서 첫번째로 받는 값이 A
-  const B = parseInt(data[1]); // i줄에서 두번째로 받는 값이 B
-  console.log(A + B);
+  const splitData = fileData[i].split(" "); // i번째 줄에서 공백 기준으로 A와 B 분리
+  const A = parseInt(splitData[0]); // A 값을 정수로 변환
+  const B = parseInt(splitData[1]); // B 값을 정수로 변환
+  sumData += A + B + "\n"; // A + B 결과를 문자열에 추가하고 줄바꿈
 }
+console.log(sumData.trim()); // 마지막 줄바꿈 제거하고 결과 출력
