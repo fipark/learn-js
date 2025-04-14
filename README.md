@@ -324,6 +324,25 @@
   - 💻 0 0이 들어올 때까지 A+B를 출력하는 문제 - [boj/03/11.js](./workspace-ins/boj/03/11.js)
   - 💻 입력이 끝날 때까지 A+B를 출력하는 문제 - [boj/03/12.js](./workspace-ins/boj/03/12.js)
 
+### 11일차(금)
+#### 오전(3시간)
+* boj 문제 풀이
+  - 💻 공 넣기 - [boj/04/05.js](./workspace-ins/boj/04/05.js)
+* 📜 2차원 배열
+  - 💻 [01-29-02 2차원 배열 - 멋사 부트캠프 수강생 관리](./workspace-ins/ch01/ex01-29-02.js)
+
+#### 오후(3시간)
+* 📜 참조 타입(Array, 배열)
+  - 💻 [01-27 모든 요소 읽기 1 - for 루프, for...of, for...in](./workspace-ins/ch01/ex01-27.js)
+* 📜 유사 배열 객체
+  - 💻 [01-28 유사 배열 객체](./workspace-ins/ch01/ex01-28.js)
+* 📜 2차원 배열
+  - 💻 [01-29 2차원 배열](./workspace-ins/ch01/ex01-29.js)
+* boj 문제 풀이
+  - 💻 입력값 2차원 배열로 추출하는 샘플 완성 - [boj/input/sample.js](./workspace-ins/boj/input/sample.js)
+  - 💻 오븐 시계 - [boj/02/06.js](./workspace-ins/boj/02/06.js)
+
+
 
 # 참고 사이트
 ## 자바스크립트 학습

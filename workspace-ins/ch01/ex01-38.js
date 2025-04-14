@@ -8,9 +8,20 @@
  * @param {number} n2 
  * @returns {number} - 최대값
  */
-function max(n1, n2){
+function max(n1, n2) {
+  // TODO hoisting 단원
+  // var result;
+  let result;
+  if (n1 > n2) {
+    result = n1;
+  } else {
+    result = n2;
+  }
 
+  return result;
 }
 
 console.log(max(10, 20)); // 20
 console.log(max(200, 30)); // 200
+
+console.log(result);
