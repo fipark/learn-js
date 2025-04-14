@@ -14,7 +14,7 @@ const firstTextNode = firstLi.firstChild; // 텍스트 노드 객체 선택
 console.log('제일 먼저 구매할 항목', firstTextNode.nodeValue); // nodeValue로 실제 텍스트 값 출력
 
 // lastElementChild를 사용하여 마지막 li 요소의 텍스트 내용 출력
-console.log('마지막으로 사야할 품목', shoppingList.lastElementChild.firstChild.nodeValue)
+console.log('마지막으로 사야할 품목', shoppingList.lastElementChild.firstChild.nodeValue);
 
 
 // 최승균
