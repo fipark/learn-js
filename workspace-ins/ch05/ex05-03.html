@@ -59,23 +59,23 @@
 
       const shoppingList = document.getElementById('purchases'); // <ul id="purchases" class="list">
 
-      // 솔루션 1: createElement 사용
+      // 솔루션 1: createElement, appendChild 사용
       const newLi = document.createElement('li'); // <li>
       const newTxt = document.createTextNode('우유'); // 우유
 
       console.log(newLi.childNodes, newLi.firstChild, newLi.lastChild);
-      newLi.appendChild(newTxt);
+      newLi.appendChild(newTxt); // <li>우유</li>
       console.log(newLi.childNodes, newLi.firstChild, newLi.lastChild);
-      shoppingList.appendChild(newLi); // 맨 끝에 추가
-      
 
-      /* 솔루션 2: innerHTML
+      // shoppingList.appendChild(newLi); // 맨 끝에 추가
+      shoppingList.insertBefore(newLi, shoppingList.firstChild); // 맨 앞에 추가
+      
+      // 솔루션 2: innerHTML
       // innerHTML: 요소노드의 내부 HTML 코드값을 문자열로 가지고 있는 속성(자신 제외)
       console.log(shoppingList.innerHTML);
       // innerHTML: 요소노드의 내부 HTML 코드값을 문자열로 가지고 있는 속성(자신 포함)
       console.log(shoppingList.outerHTML);
       shoppingList.innerHTML += '<li>우유</li>';
-      */
     }
     
 
@@ -88,7 +88,7 @@
   <div>
     <button>두번째 영화 찾기</button>
     <!-- 이벤트 등록 방법 2: HTML 요소의 on<event> 속성의 값으로 이벤트 발생시 실행할 코드를 등록 -->
-    <button OnClIcK="addMilk();console.log('우유 추가 완료');">마지막에 우유 추가</button>
+    <button OnClIcK="addMilk();console.log('우유 추가 완료');">우유 추가</button>
     <button>첫번째 항목 삭제</button>
   </div>
 
