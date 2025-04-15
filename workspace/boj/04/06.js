@@ -33,12 +33,20 @@
 function main() {
   const data = getData(); // 입력된 데이터를 가져와 data에 저장
   const n = data[0][0];
-  const result = new Array(n).fill(0);
-  for (let i = 1; i < data.length; i++) {
-    const rowArr = data[i];
-    const x = rowArr[0];
-    const y = rowArr[1];
+  const m = data[0][1];
+  let result = [];
+  for (let i = 1; i <= n; i++) {
+    result.push(i);
   }
+  for (let i = 1; i <= m; i++) {
+    let a = data[i][0];
+    let b = data[i][1];
+    let item = result[a - 1];
+    result[a - 1] = result[b - 1];
+    result[b - 1] = item;
+  }
+
+  console.log(result.join(" "));
 }
 main(); // main 함수 호출
 

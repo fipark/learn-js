@@ -40,11 +40,11 @@ N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출
 // 메인 함수 실행
 function main() {
   const data = getData(); // 입력된 데이터를 가져와 data에 저장
-  const testnum = data[0];
-  const num = data[1];
   let sum = 0;
-  for (let i = 0; i < num.length; i++) {
-    sum += parseInt(num[i]);
+  let number = data[1];
+  for (let i = 0; i < number.length; i++) {
+    let num = data[1][i];
+    sum += parseInt(num);
   }
   console.log(sum);
 
