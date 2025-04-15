@@ -48,7 +48,9 @@
           const firstLi = targetList[i].firstElementChild;
           // 해당노드를 삭제한다.
           // if(firstLi) firstLi.remove();
-          firstLi?.remove(); // 옵셔널 체이닝
+          // firstLi?.remove(); // 옵셔널 체이닝
+
+          firstLi?.parentNode.removeChild(firstLi);
         }
       });
     });
