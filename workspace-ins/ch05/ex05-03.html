@@ -35,9 +35,9 @@
         // const firstLi = movies.firstElementChild;
         // const secondLi = firstLi.nextElementSibling;
 
-        console.log(secondLi.firstChild.nodeValue);
+        console.log(secondLi?.firstChild.nodeValue);
         // textContent: 요소노드의 내부 텍스트노드의 문자열 값을 가지고 있는 속성
-        console.log(secondLi.textContent);
+        console.log(secondLi?.textContent);
       };
 
       // 이벤트 등록 방법 3: addEventListener()
@@ -47,22 +47,35 @@
           // i=0 <li>두부</li>, i=1 <li>어벤저스</li>
           const firstLi = targetList[i].firstElementChild;
           // 해당노드를 삭제한다.
-          firstLi.remove();
+          // if(firstLi) firstLi.remove();
+          firstLi?.remove(); // 옵셔널 체이닝
         }
       });
     });
-
     
     // 마지막에 우유 추가
     function addMilk(){
       console.log('우유 추가 예정');
 
-      const shoppingList = document.getElementById('purchases');
+      const shoppingList = document.getElementById('purchases'); // <ul id="purchases" class="list">
+
+      // 솔루션 1: createElement 사용
+      const newLi = document.createElement('li'); // <li>
+      const newTxt = document.createTextNode('우유'); // 우유
+
+      console.log(newLi.childNodes, newLi.firstChild, newLi.lastChild);
+      newLi.appendChild(newTxt);
+      console.log(newLi.childNodes, newLi.firstChild, newLi.lastChild);
+      shoppingList.appendChild(newLi); // 맨 끝에 추가
+      
+
+      /* 솔루션 2: innerHTML
       // innerHTML: 요소노드의 내부 HTML 코드값을 문자열로 가지고 있는 속성(자신 제외)
       console.log(shoppingList.innerHTML);
       // innerHTML: 요소노드의 내부 HTML 코드값을 문자열로 가지고 있는 속성(자신 포함)
       console.log(shoppingList.outerHTML);
       shoppingList.innerHTML += '<li>우유</li>';
+      */
     }
     
 
