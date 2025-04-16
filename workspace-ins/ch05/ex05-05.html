@@ -20,17 +20,17 @@
               <button type="button" onclick="handleAdd()">추가</button>
             </div>
             <ul class="todolist">
-              <li>
+              <li data-no="1">
                 <span>1</span>
                 <span><s>샘플1</s></span>
                 <button type="button">삭제</button>
               </li>
-              <li>
+              <li data-no="2">
                 <span>2</span>
                 <span>샘플2</span>
                 <button type="button">삭제</button>
               </li>
-              <li>
+              <li data-no="3">
                 <span>3</span>
                 <span>샘플3</span>
                 <button type="button">삭제</button>
@@ -79,6 +79,7 @@
       titleElem.appendChild(titleTxt);
       // <button type="button">삭제</button>
       deleteElem.setAttribute('type', 'button');
+      titleElem.setAttribute('tabindex', 0); // 완료/미완료 처리를 위한 탭 포커싱 ***** 접근성
       deleteElem.appendChild(deleteTxt);
 
       // <li><span>3</span></li>
@@ -88,6 +89,11 @@
       // <li><span>3</span><span>샘플3</span><button type="button">삭제</button></li>
       liElem.appendChild(deleteElem);
 
+      // custom 속성
+      // <li data-no="3">
+      // elem.dataset.no -> 3
+      liElem.dataset.no = item.no;
+      
       // <li>
       //   <span>3</span>
       //   <span>샘플3</span>
@@ -112,6 +118,7 @@
       const item = {
         // children: 자식노드의 목록(요소노드)
         no: todoList.children.length + 1,
+        // no: document.querySelectorAll('.todolist > li').length + 1,
         // no: ++itemNo,
         // title: title, // 속성값을 담는 변수가 속성명과 일치할 경우 속성값 생략 가능
         title,
@@ -130,7 +137,7 @@
 
     // 할일 삭제
     function deleteItem(no){
-      
+      const targetLi = document.querySelector(`li[data-no="${no}"]`);
     }
   </script>
 </body>
