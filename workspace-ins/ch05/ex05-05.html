@@ -48,19 +48,31 @@
   <script>
     // 한건의 Todo 객체를 받아서 DOM 객체로 만들어 반환
     function getTodoItemElem(item){
-      // { no: 3, title: '라면', done: true } // Todo 객체
+      // item -> { no: 3, title: '라면', done: true } // Todo 객체
       /* DOM 객체
-      <li>
+      return <li>
         <span>3</span>
         <span>샘플3</span>
         <button type="button">삭제</button>
       </li>
       */
+
+      const liElem = document.createElement('li');
+
+
+
+      return liElem;
     }
 
     // 할일 추가
     function addItem(title){
-
+      const item = {
+        no: 4,
+        title: '테스트',
+        done: false
+      };
+      const todoLi = getTodoItemElem(item);
+      console.log(todoLi);
     }
 
     // 완료/미완료 처리
