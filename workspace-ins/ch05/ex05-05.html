@@ -22,7 +22,7 @@
             </div>
             <!-- 할일 목록이 표시되는 영역 -->
             <ul class="todolist">
-              <li data-no="1">
+              <!-- <li data-no="1">
                 <span>1</span>
                 <span><s>샘플1</s></span>
                 <button type="button">삭제</button>
@@ -36,7 +36,7 @@
                 <span>3</span>
                 <span>샘플3</span>
                 <button type="button">삭제</button>
-              </li>
+              </li> -->
             </ul>
           </li>
         </ul>
@@ -190,8 +190,26 @@
      * @param {number} no - 토글할 Todo 아이템의 번호
      */
     function toggleDone(no){
-      console.log(no);
-      
+      /*
+        <li data-no="3" data-done="true">
+          <span>3</span>
+          <span>샘플3</span>
+          <button type="button">삭제</button>
+        </li>
+      */
+      const targetLi = document.querySelector(`.todolist > li[data-no="${no}"]`);
+      const done = targetLi.dataset.done === 'true';
+      console.log(typeof done, done);
+      const titleEl = targetLi.querySelector('span:last-of-type'); // <span>샘플3</span>
+      if(done){ // done이 true라면 <span><s>샘플3</s></span> -> <span>샘플3</span>로 수정        
+        titleEl.appendChild(titleEl.firstChild.firstChild);
+        titleEl.firstChild.remove();
+      }else{ // done이 false라면 <span>샘플3</span> -> <span><s>샘플3</s></span>로 수정
+        const sElem = document.createElement('s'); // <s>
+        sElem.appendChild(titleEl.firstChild); // <s>샘플3</s>, <span></span>
+        titleEl.appendChild(sElem); // <span><s>샘플3</s></span>
+      }
+      targetLi.dataset.done = !done; // 완료 여부를 토글
     }
 
     /**
