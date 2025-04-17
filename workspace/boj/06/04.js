@@ -27,3 +27,8 @@ baekjoon
 0
 */
 
+
+const fs = require("fs");
+const word = fs.readFileSync(0).toString().trim();
+const reverse = word.split("").reverse().join("");
+console.log(word === reverse ? 1 : 0);
