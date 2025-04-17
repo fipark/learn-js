@@ -15,6 +15,14 @@
     .line-through {
       text-decoration: line-through;  /* 취소선 스타일 */
     }
+    ul {
+      margin: 10px;
+      border: 1px solid blue;
+    }
+    li {
+      border: 1px solid yellow;
+      padding: 10px;
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
@@ -36,18 +44,28 @@
         console.log(computedStyle.fontSize);
       });
 
-      for(let item of list.children){
-        item.addEventListener('click', function(event){
-          console.log('event.target', event.target); // 실제 이벤트가 발생한 요소
-          // if(event.target.classList.contains('line-through')){ // 지정한 class를 가지고 있는지 여부 반환
-          //   event.target.classList.remove('line-through'); // line-through class 삭제
-          // }else{
-          //   event.target.classList.add('line-through'); // line-through class 추가
-          // }
+      // for(let item of list.children){
+      //   item.addEventListener('click', function(event){
+      //     console.log('event.target', event.target); // 실제 이벤트가 발생한 요소
+      //     // if(event.target.classList.contains('line-through')){ // 지정한 class를 가지고 있는지 여부 반환
+      //     //   event.target.classList.remove('line-through'); // line-through class 삭제
+      //     // }else{
+      //     //   event.target.classList.add('line-through'); // line-through class 추가
+      //     // }
 
-          event.target.classList.toggle('line-through'); // 있으면 제거하고 없으면 추가
-        });
-      }
+      //     event.target.classList.toggle('line-through'); // 있으면 제거하고 없으면 추가
+      //   });
+      // }
+
+      // 이벤트 위임
+      list.addEventListener('click', function(event){
+        console.log(event.target);
+        console.log(event.currentTarget);
+        if(event.target.nodeName === 'LI'){
+          event.target.classList.toggle('line-through');
+        }
+      });
+
     });
   </script>
 </head>
