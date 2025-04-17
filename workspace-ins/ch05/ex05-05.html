@@ -56,11 +56,13 @@
     function getTodoItemElem(item){
       // item -> { no: 3, title: '라면', done: true } // Todo 객체
       /* DOM 객체
-      return <li>
-        <span>3</span>
-        <span>샘플3</span>
-        <button type="button">삭제</button>
-      </li>
+      return (
+        <li data-no="3" data-done="true">
+          <span>3</span>
+          <span>샘플3</span>
+          <button type="button">삭제</button>
+        </li>
+      );
       */
 
       // <li>
@@ -98,26 +100,37 @@
       // custom 속성
       // <li data-no="3">
       // elem.dataset.no -> 3
+
+      // <li> -> <li data-no="3" data-done="true">
+      // liElem.setAttribute('data-no', item.no);
+      // liElem.setAttribute('data-done', 'true');
+
       liElem.dataset.no = item.no;
+      liElem.dataset.done = item.done;
 
       // "삭제" 버튼에 클릭 이벤트 핸들러 추가
       deleteElem.addEventListener('click', function(event){
         // no를 찾아서~~~ 첫번째 방법
-        // const btn = event.target; // 클릭 이벤트가 발생한 요소(<button>)
-        // // btn의 조상중 셀렉터와 일치하는 가장 가까운 조상
-        // const liNode = btn.closest('li'); // <li data-no="3">
-        // deleteItem(liNode.dataset.no);
-
-        // no를 찾아서~~~ 두번째 방법
-        // TODO 클로저 단원에서 이상한 부분 확인
-        // deleteItem(item.no);
+        const btn = event.target; // 클릭 이벤트가 발생한 요소(<button>)
+        // btn의 조상중 셀렉터와 일치하는 가장 가까운 조상
+        const liNode = btn.closest('li'); // <li data-no="3">
+        deleteItem(liNode.dataset.no);
       });
 
       // 삭제 이벤트 등록
-      deleteElem.setAttribute('onclick', `deleteItem(${item.no})`);
+      // deleteElem.setAttribute('onclick', `deleteItem(${item.no})`);
 
       // 완료/미완료 처리
-      titleElem.setAttribute('onclick', `toggleDone(${item.no})`);
+      titleElem.addEventListener('click', function(event){
+        // no를 찾아서~~~ 첫번째 방법
+        const btn = event.target; // 클릭 이벤트가 발생한 요소(<button>)
+        // btn의 조상중 셀렉터와 일치하는 가장 가까운 조상
+        const liNode = btn.closest('li'); // <li data-no="3">
+        toggleDone(liNode.dataset.no);
+      });
+
+      // 완료/미완료 처리
+      // titleElem.setAttribute('onclick', `toggleDone(${item.no})`);
       
       // <li>
       //   <span>3</span>
@@ -165,6 +178,7 @@
         title,
         done: false // 미완료 상태
       };
+      
       const todoLi = getTodoItemElem(item);
       console.log(todoLi);
       
