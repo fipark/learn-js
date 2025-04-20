@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    form, div, p {
+      margin: 10px;
+      border: 1px solid blue;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('form');
+  const div = document.querySelector('div');
+  const p = document.querySelector('p');
+
+  form.addEventListener('click', function () {
+    console.log('1.form 클릭');
+  }, true);
+  div.addEventListener('click', function () {
+    console.log('2.div 클릭');
+  }, true);
+  p.addEventListener('click', function () {
+    console.log('3.p 클릭');
+  }, true);
+});
+  
+  </script>
+</head>
+<body>
+  <h1>DOM - 버블링과 캡처링</h1>
+  <form>FORM
+    <div>DIV
+      <p>P</p>
+    </div>
+  </form>
+</body>
+</html>
