@@ -138,8 +138,18 @@ function main() {
   const m = data[0][0];
   const n = data[0][1];
   let result = [];
+  let reverse = [];
+  
   for (let i = 1; i <= m; i++) {
     result.push(i);
+  }
+  for (let i =1; i<=n; i++){
+    const row = data[i];
+    let a = data[i][0];
+    let b = data[i][0];
+    reverse = result.splice(a, b);
+
+
   }
 }
 main(); // main 함수 호출

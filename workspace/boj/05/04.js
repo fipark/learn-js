@@ -43,3 +43,10 @@ z
 122
 */
 
+const fs = require("fs");
+const fileData = fs.readFileSync(0).toString().trim();
+//console.log(fileData);
+
+
+
+console.log(fileData.charCodeAt(0));
