@@ -5,11 +5,12 @@
     이때 선언문 형태의 함수가 생성 되므로 함수 선언 코드보다 먼저 호출하는 코드를 작성하는게 가능
 */
 
-console.log(add(10, 20));
-
+// 호이스팅 단계에서 함수를 생성
 // 선언문 방식의 함수 정의
 function add(x, y){
   return x + y;
 }
 
+// 본 코드 실행 단계
+console.log(add(10, 20));
 console.log(add(10, 20));

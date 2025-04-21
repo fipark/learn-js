@@ -14,12 +14,12 @@ function foo(){
     console.log('bar 호출.');
     return function(){
       console.log("baz 호출.");
+      return foo;
     };
   };
 };
 
-
-foo()()()
+foo()()()()()()()()()()()();
 
 const bar = foo();
 const baz = bar();

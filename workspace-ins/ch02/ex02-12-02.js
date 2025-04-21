@@ -8,7 +8,7 @@
 console.log(add(10, 20));
 
 // 표현식 방식의 함수 정의
-const add = function(x, y){
+var add = function(x, y){
   return x + y;
 };
 

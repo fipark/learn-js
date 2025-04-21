@@ -5,14 +5,16 @@
     선언 전에 접근하면 에러 발생 (undefined 값도 할당되지 않은 상태)
 */
 
-console.log(a);
-// console.log(b);
-// console.log(c);
+// 호이스팅 단계에서 var 로 선언한 변수의 선언부만 처리됨
+var add; // undefined
 
-var a = 10; // 호이스팅 단계에서 undefined로 초기화 됨
-let b = 20; // 호이스팅 단계에서 선언만 되고 초기화가 안됨
-const c = 30; // 호이스팅 단계에서 선언만 되고 초기화가 안됨
 
-console.log(a);
-console.log(b);
-console.log(c);
+// 본 코드 실행 단계
+console.log(add(10, 20));
+
+// 표현식 방식의 함수 정의
+add = function(x, y){
+  return x + y;
+};
+
+console.log(add(10, 20));
