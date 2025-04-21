@@ -61,7 +61,7 @@
       list.addEventListener('click', function(event){
         console.log(event.target);
         console.log(event.currentTarget);
-        if(event.target.nodeName === 'LI'){
+        if(event.target.tagName === 'LI'){
           event.target.classList.toggle('line-through');
         }
       });

@@ -123,9 +123,9 @@
       // 완료/미완료 처리
       titleElem.addEventListener('click', function(event){
         // no를 찾아서~~~ 첫번째 방법
-        const btn = event.target; // 클릭 이벤트가 발생한 요소(<button>)
-        // btn의 조상중 셀렉터와 일치하는 가장 가까운 조상
-        const liNode = btn.closest('li'); // <li data-no="3">
+        const titleEl = event.target; // 클릭 이벤트가 발생한 요소
+        // titleEl의 조상중 셀렉터와 일치하는 가장 가까운 조상
+        const liNode = titleEl.closest('li'); // <li data-no="3">
         toggleDone(liNode.dataset.no);
       });
 
@@ -202,8 +202,8 @@
       console.log(typeof done, done);
       const titleEl = targetLi.querySelector('span:last-of-type'); // <span>샘플3</span>
       if(done){ // done이 true라면 <span><s>샘플3</s></span> -> <span>샘플3</span>로 수정        
-        titleEl.appendChild(titleEl.firstChild.firstChild);
-        titleEl.firstChild.remove();
+        titleEl.appendChild(titleEl.firstChild.firstChild); // <span><s>샘플3</s></span> -> <span><s></s>샘플3</span>
+        titleEl.firstChild.remove(); // <span><s></s>샘플3</span> -> <span>샘플3</span>
       }else{ // done이 false라면 <span>샘플3</span> -> <span><s>샘플3</s></span>로 수정
         const sElem = document.createElement('s'); // <s>
         sElem.appendChild(titleEl.firstChild); // <s>샘플3</s>, <span></span>
