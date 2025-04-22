@@ -15,3 +15,4 @@ const f2 = function(){
 
 f1();
 f2();
+console.log(this);
