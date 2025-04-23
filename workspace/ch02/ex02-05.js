@@ -5,6 +5,7 @@
 // 선언문 방식의 함수 선언
 
 function add (x , y){
+  console.log(this)
   let result = x + y;
   return result
 

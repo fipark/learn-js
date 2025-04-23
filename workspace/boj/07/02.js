@@ -189,8 +189,21 @@
 // 메인 함수 실행
 function main() {
   const data = getData(); // 입력된 데이터를 가져와 data에 저장
-  
-
+  let max  = -1;
+  let row = 0;
+  let col = 0;
+  for (let i =0; i<9; i++){
+    for(let j =0; j<9; j++){
+      if(data[i][j]>max){
+        max = data[i][j];
+        row = i+1;
+        col = j+1;
+      }
+      
+    }
+  }
+console.log(max);
+console.log(`${row} ${col}`)
 
 
 }

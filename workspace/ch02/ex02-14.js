@@ -4,9 +4,11 @@
 */
 
 function f1(){
+  console.log(this)
   
 };
 const f2 = function(){
+  console.log(this)
   
 };
 
