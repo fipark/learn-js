@@ -30,17 +30,19 @@ console.log(s1.avg());
  * @param {number} eng 영어 점수
  */
 function College(kor, eng){
-  this.kor = kor;
-  this.eng = eng;
+  HighSchool.call(this, kor, eng);
 }
 
 inherite(HighSchool, College);
 
 // Child가 Parent를 상속 받는다.
 function inherite(Parent, Child){
-  const F = new Function();
-  F.prototype = Parent.prototype;
-  Child.prototype = new F();
+  // const F = new Function();
+  // F.prototype = Parent.prototype;
+  // Child.prototype = new F();
+
+  // Object.create(): 지정한 prototype 객체를 참조하는 인스턴스 생성
+  Child.prototype = Object.create(Parent.prototype);
   Child.prototype.constructor = Child;
 }
 
