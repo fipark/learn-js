@@ -8,8 +8,16 @@
  * @param {number} eng 영어 점수
  */
 function HighSchool(kor, eng){
-
+  this.kor = kor;
+  this.eng = eng;
 }
+HighSchool.prototype.sum = function(){
+  return this.kor + this.eng;
+};
+HighSchool.prototype.avg = function(){
+  // 소수 첫째자리에서 반올림한다.
+  return Math.round(this.sum() / 2);
+};
 
 const s1 = new HighSchool(100, 91);
 console.log(s1.sum());
@@ -21,10 +29,30 @@ console.log(s1.avg());
  * @param {number} eng 영어 점수
  */
 function College(kor, eng){
-
+  this.kor = kor;
+  this.eng = eng;
 }
 
-const c1 = new College(80, 71);
-console.log(c1.sum());
-console.log(c1.avg());
-console.log(c1.grade());
+// College가 HighSchool을 상속 받는다.
+College.prototype = new HighSchool();
+College.prototype.constructor = College;
+
+College.prototype.grade = function(){
+  let level = 'F';
+  const avg = this.avg();
+  if(avg >= 90){
+    level = 'A';
+  }else if(avg >= 80){
+    level = 'B';
+  }else if(avg >= 70){
+    level = 'C';
+  }else if(avg >= 60){
+    level = 'D';
+  }
+  return level;
+};
+
+const c1 = new College(80, 99);
+console.log(c1.sum()); // 179
+console.log(c1.avg()); // 89.5
+console.log(c1.grade()); // B
