@@ -8,8 +8,16 @@
  * @param {number} eng 영어 점수
  */
 function HighSchool(kor, eng){
-
+  this.kor = kor
+  this.eng = eng 
 }
+HighSchool.prototype.sum = function(){
+  return this.kor + this.eng
+}
+HighSchool.prototype.avg = function(){
+  return Math.round(this.sum() /2)
+}
+
 
 const s1 = new HighSchool(100, 91);
 console.log(s1.sum());
@@ -21,10 +29,25 @@ console.log(s1.avg());
  * @param {number} eng 영어 점수
  */
 function College(kor, eng){
-
+  this.kor = kor
+  this.eng = eng
+}
+College.prototype.sum = function(){
+  return this.kor + this.eng
+}
+College.prototype.avg = function(){
+  return this.sum()/2
+}
+College.prototype.grade = function(){
+  const avg = this.avg()
+  if(90<=avg ) return 'A'
+  else if(avg>=80) return 'B'
+  else if(avg>=70) return 'C'
+  else return 'D'
 }
 
 const c1 = new College(80, 71);
 console.log(c1.sum());
 console.log(c1.avg());
 console.log(c1.grade());
+console.log(College.prototype)
