@@ -34,9 +34,15 @@ function College(kor, eng){
   this.eng = eng;
 }
 
-// College가 HighSchool을 상속 받는다.
-College.prototype = new HighSchool();
-College.prototype.constructor = College;
+inherite(HighSchool, College);
+
+// Child가 Parent를 상속 받는다.
+function inherite(Parent, Child){
+  const F = new Function();
+  F.prototype = Parent.prototype;
+  Child.prototype = new F();
+  Child.prototype.constructor = Child;
+}
 
 College.prototype.grade = function(){
   let level = 'F';
@@ -57,3 +63,5 @@ const c1 = new College(80, 99);
 console.log(c1.sum()); // 179
 console.log(c1.avg()); // 89.5
 console.log(c1.grade()); // B
+
+console.log(College.prototype);

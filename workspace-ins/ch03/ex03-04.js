@@ -56,3 +56,5 @@ const c1 = new College(80, 99);
 console.log(c1.sum()); // 179
 console.log(c1.avg()); // 89.5
 console.log(c1.grade()); // B
+
+console.log(College.prototype);
