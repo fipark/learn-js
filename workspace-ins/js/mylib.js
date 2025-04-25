@@ -1,5 +1,16 @@
 const mylib = {};
 
+// isPrime(5); 메모이제이션 안됨
+// isPrime = isPrime.memoize();
+// isPrime(5); 메모이제이션 된 결과 반환
+// 일급객체, this, arguments, apply, prototype, closure
+Function.prototype.memoize = function(){
+  const fn = this; // isPrime
+  return function(){
+    return fn.memo.apply(fn, arguments); // isPrime.memo(5)
+  };
+};
+
 // 함수에 메모이제이션 기능 추가
 Function.prototype.memo = function(key){ // this = isPrime
   // 캐시를 위한 코드

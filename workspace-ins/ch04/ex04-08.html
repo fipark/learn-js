@@ -10,11 +10,14 @@
 		// 각각 "btn-0 클릭", "btn-1 클릭", "btn-2 클릭" 
 		// ... "btn-n 클릭"을 콘솔에 출력하시오.
     const btns = document.querySelectorAll('button');
+    var i;
     // IIFE pattern
-		for(let i=0; i<btns.length; i++){
-      btns[i].addEventListener('click', function(){
-        
-      });
+		for(i=0; i<btns.length; i++){
+      ((num) => {
+        btns[i].addEventListener('click', function(){
+          console.log(`btn-${num} 클릭`);
+        });
+      })(i);
 		}
 	};
 </script>
