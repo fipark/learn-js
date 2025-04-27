@@ -38,14 +38,14 @@ function College(kor, eng){
   this.eng = eng;
 }
 
-inherite(HighSchool, College)
+mylib.inherite(HighSchool, College)
 // College가 HighSchool을 상속 받는다.
-function inherite (Parent, Child){
-  const F = new Function();
-  F.prototype = Parent.prototype;
-  Child.prototype =new F();
-  Child.prototype.constructor = Child
-}
+// function inherite (Parent, Child){
+//   const F = new Function();
+//   F.prototype = Parent.prototype;
+//   Child.prototype =new F();
+//   Child.prototype.constructor = Child
+// }
 
 
 College.prototype.grade = function(){
