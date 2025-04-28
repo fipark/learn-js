@@ -84,9 +84,11 @@ X대학 M교수님은 프로그래밍 수업을 맡고 있다.
 // 메인 함수 실행
 function main() {
   const data = getData(); // 입력된 데이터를 가져와 data에 저장
+  let arr = [];
   for (let i = 1; i <= 28; i++) {
-    let inputdata = data[i];
+    push.arr(data[i])
   }
+  
 }
 main(); // main 함수 호출
 

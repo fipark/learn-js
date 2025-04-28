@@ -36,3 +36,11 @@ baaa
 A
 */
 
+const fs = require("fs");
+const word = fs.readFileSync(0).toString().trim().split(" ");
+//console.log(fileData);
+let obj = {};
+let result = [];
+for(let i=0; i<word.length; i++){
+  
+}
