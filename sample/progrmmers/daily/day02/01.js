@@ -1,5 +1,5 @@
 /*
-분류: 
+분류: 출력
 문제: 덧셈식 출력하기
 url: https://school.programmers.co.kr/learn/courses/30/lessons/181947?language=javascript
 

@@ -1,5 +1,5 @@
 /*
-분류: 
+분류: 연산
 문제: 문자열 겹쳐쓰기
 url: https://school.programmers.co.kr/learn/courses/30/lessons/181943?language=javascript
 

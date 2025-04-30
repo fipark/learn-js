@@ -1,5 +1,5 @@
 /*
-분류: 
+분류: 출력
 문제: 덧셈식 출력하기
 url: https://school.programmers.co.kr/learn/courses/30/lessons/181947?language=javascript
 
@@ -17,6 +17,12 @@ a + b = c
 
 출력 #1
 4 + 5 = 9
+
+입력 #2
+5 7
+
+출력 #2
+5 + 7 = 12
 */
 
 const readline = require('readline');
@@ -30,5 +36,6 @@ let input = [];
 rl.on('line', function (line) {
     input = line.split(' ');
 }).on('close', function () {
-  console.log(Number(input[0]) + Number(input[1]));
+  const sum = (Number(input[0]) + Number(input[1]));
+  console.log(`${input[0]} + ${input[1]} = ${sum}`);
 });

@@ -33,7 +33,7 @@ rl.on('line', function (line) {
   str = input[0];
   n = Number(input[1]);
 
-  
+  const result = getRepeat(str, n);
 
   console.log(result);
 });

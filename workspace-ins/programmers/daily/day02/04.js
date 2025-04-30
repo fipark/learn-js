@@ -1,5 +1,5 @@
 /*
-분류: 
+분류: 출력
 문제: 홀짝 구분하기
 url: https://school.programmers.co.kr/learn/courses/30/lessons/181944?language=javascript
 
@@ -34,5 +34,24 @@ rl.on('line', function (line) {
   input = line.split(' ');
 }).on('close', function () {
   n = Number(input[0]);
-  console.log(input);
+  
+  const even = isEven(n);
+  if(even === true){
+    console.log(`${n} is even`);
+  }else{
+    console.log(`${n} is odd`);
+  }
 });
+
+// 지정한 숫자가 짝수인지 여부를 반환
+function isEven(num){
+  let even;
+
+  if(num % 2 === 0){ // 짝수
+    even = true;
+  }else{
+    even = false;
+  }
+
+  return even;
+}
