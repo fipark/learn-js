@@ -112,4 +112,5 @@
   },
   // "include": ["workspace/**/*"],
   // "exclude": ["node_modules", "sample/**/*"]
+  "exclude": ["**/tempCodeRunnerFile.ts"]
 }

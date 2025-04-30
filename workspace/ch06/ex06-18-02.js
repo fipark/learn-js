@@ -18,8 +18,12 @@
   function createDropdownList(list){
     let value;
     let options = '';
+    for(let item of list){
+      value = item.value;
+      options += `<option selected="${item.selected?'selected':''}">${typeof value==='string'?value.toUpperCase():value}</option>\n`;
+    }
     
-    return `<select>\n${ options }\n</select>`;
+    return `<select>\n${ options }</select>`;
   }
 
   /* 출력 결과

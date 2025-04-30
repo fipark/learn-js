@@ -1,6 +1,24 @@
 // 인터페이스 선언 병합
 // ex06-15.ts 복사
 
+
 (()=>{
-  
+  interface Todo {
+    id : number
+    title:string;
+    content: string;
+  }
+
+  interface Todo {
+    done: boolean;
+    title:string;
+    createD: Date;
+  }
+  const todo : Todo ={
+    id:1,
+    title:'할일1',
+    content:'내용1',
+    done:true,
+    createD: new Date(),
+  }
 })();
