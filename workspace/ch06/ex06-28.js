@@ -15,4 +15,5 @@
     }
     // welcome 함수에 Guest 타입의 member를 전달해야 하지만 타입 호환이 가능한 타입도 전달 가능
     welcome(haru);
+    welcome(namu);
 })();

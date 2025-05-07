@@ -14,5 +14,5 @@
     }
     walkWithMyDog('하루', 1);
     walkWithMyDog('나무', 2);
-    walkWithMyDog('이틀', 3); // 타입 에러를 발생 시키고 싶음
+    //walkWithMyDog('이틀', 3); // 타입 에러를 발생 시키고 싶음
 })();
