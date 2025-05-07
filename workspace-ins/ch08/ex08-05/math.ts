@@ -13,8 +13,9 @@ function multiply(a: number, b: number) {
   return a * b;
 }
 
-type Member = {
+export type Member = {
   name: string;
   age: number;
 }
 
+export default { plus, minus, multiply };
