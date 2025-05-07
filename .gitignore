@@ -5,3 +5,4 @@ tempCodeRunnerFile.*
 workspace-ins/ch06/*.js
 workspace-ins/ch07/*.js
 .github
+node_modules/
