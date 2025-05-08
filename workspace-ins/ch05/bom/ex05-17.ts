@@ -25,6 +25,6 @@ function find(){
 const myPosition = document.querySelector('#my-position');
 function showPosition(position: Position){
   if(myPosition){
-    myPosition.textContent = `${position.lat},${position.lng}`;
+    myPosition.textContent = `${position.lat},${position.lng}(${position.accuracy.toFixed()}m)`;
   }
 }
