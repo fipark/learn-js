@@ -1,6 +1,8 @@
 // 랜덤 고양이 이미지 가져오기 - XMLHttpRequest 사용
 
-const url = 'https://api.thecatapi.com/v1/images/search';
+import { appendImages } from "./utils";
+
+const url = 'https://api.thecatapi.com/v1/images/search?limit=2';
 
 const btn = document.querySelector('button');
 
@@ -18,6 +20,8 @@ function getImages(): void{
   xhr.addEventListener('load', function() {
     const result = this.responseText;
     console.log(result);
+    const data = JSON.parse(result);
+    appendImages();
   });
 
   // 3. 서버에 요청(send)
