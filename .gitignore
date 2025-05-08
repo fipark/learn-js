@@ -2,6 +2,7 @@
 .history
 .github
 PPT/~$*
+node_modules
 tempCodeRunnerFile.*
 workspace-ins/ch05/ajax/*.js
 workspace-ins/ch05/bom/*.js

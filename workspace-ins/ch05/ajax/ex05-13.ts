@@ -10,10 +10,17 @@ const btn = document.querySelector('button');
 
 btn?.addEventListener('click', getImages);
 
-async function getImages(): void{
-
-  const response = await fetch(url);
-  const data: Cat[] = await response.json();
-  appendImages(data);
-  
+async function getImages(){
+  try {
+    const response = await fetch(url);
+    console.log(response);
+    if(response.ok) {
+      const data: Cat[] = await response.json();
+      appendImages(data);
+    }else{
+      console.error(response.status, '에러 발생');
+    }
+  } catch(err) { // 네트워크 오류
+    console.error('에러 발생', err);
+  }
 };
