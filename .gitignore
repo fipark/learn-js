@@ -13,6 +13,7 @@ node_modules/
 workspace-ins/ch08/*.js
 workspace-ins/ch05/ajax/**/*.js
 workspace-ins/ch05/bom/**/*.js
+workspace-ins/ch05/chat/**/*.js
 workspace-ins/ch06/**/*.js
 workspace-ins/ch07/**/*.js
 workspace-ins/ch08/**/*.js
