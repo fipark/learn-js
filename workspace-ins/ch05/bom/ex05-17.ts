@@ -26,6 +26,8 @@ function find(){
       accuracy: currentPosition.coords.accuracy // 위경도 오차(m)
     };
     showPosition(position);
+  }, () => {}, {
+    enableHighAccuracy: true
   });
 }
 
